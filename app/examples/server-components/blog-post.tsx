@@ -1,5 +1,9 @@
 // This is a Server Component
-export default function BlogPost({ post }: { post: any }) {
+export default function BlogPost({
+  post,
+}: {
+  post: { author: string; date: string; title: string; content: string };
+}) {
   return (
     <article className="mb-8">
       <h2 className="text-2xl font-bold mb-2">{post.title}</h2>

@@ -28,6 +28,7 @@ export default function Component() {
   return (
     <div className="p-4 bg-white rounded-lg shadow">
       <h2 className="text-2xl font-bold mb-4">Custom Element Example</h2>
+      {/* @ts-expect-error type is not defined for custom element*/}
       <my-custom-element />
     </div>
   );

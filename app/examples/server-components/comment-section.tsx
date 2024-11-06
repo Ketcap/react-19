@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export default function CommentSection({ postId }: { postId: string }) {
-  const [comments, setComments] = useState([]);
+export default function CommentSection(props: { postId: string }) {
+  const [comments, setComments] = useState<string[]>([]);
   const [newComment, setNewComment] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,7 +18,9 @@ export default function CommentSection({ postId }: { postId: string }) {
 
   return (
     <div>
-      <h3 className="text-xl font-semibold mb-4">Comments</h3>
+      <h3 className="text-xl font-semibold mb-4">
+        Comments for post {props.postId}
+      </h3>
       {comments.map((comment, index) => (
         <p key={index} className="mb-2 p-2 bg-gray-100 rounded">
           {comment}

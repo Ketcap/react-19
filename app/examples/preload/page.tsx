@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { prefetchDNS, preconnect, preload, preinit } from "react-dom";
+import { preload } from "react-dom";
 
 // Example 1
 // export default function PreloadExample() {
@@ -40,8 +40,9 @@ export default function Component() {
     <div className="p-4 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
       <h1 className="text-2xl font-bold">React Preload API Demo</h1>
       <p>
-        Open your browser's network tab before clicking the button. You should
-        see the image already loaded before it's displayed.
+        {
+          "Open your browser's network tab before clicking the button. You should see the image already loaded before it's displayed."
+        }
       </p>
       <Button onClick={() => setShowImage(true)}>Show Image</Button>
       {showImage && <ImageComponent src={imageUrl} />}

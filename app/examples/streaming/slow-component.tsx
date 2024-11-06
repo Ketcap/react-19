@@ -1,7 +1,7 @@
 import { use } from "react";
 
 const fetchData = () =>
-  new Promise((resolve) =>
+  new Promise<string>((resolve) =>
     setTimeout(() => resolve("Slow Component Data"), 5000)
   );
 
